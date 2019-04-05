@@ -1,0 +1,204 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>9. 代码块 &#8212; reStructuredText教程 0.0.1 文档</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="1. toctree" href="../Sphinx标记结构/toctree.html" />
+    <link rel="prev" title="8. 注释" href="注释.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>9. 代码块<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="bash">
+<h2>9.1. bash代码样例<a class="headerlink" href="#bash" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">select</span> c in yes no <span class="p">;</span> <span class="k">do</span>
+        <span class="nb">echo</span> <span class="s2">&quot; you enter is </span><span class="nv">$c</span><span class="s2">&quot;</span>
+        <span class="k">case</span> <span class="nv">$c</span> in
+                yes<span class="o">)</span>
+                        <span class="nb">echo</span> <span class="s2">&quot;yes&quot;</span><span class="p">;;</span>
+                no<span class="o">)</span>
+                        <span class="nb">echo</span> <span class="s2">&quot;no&quot;</span><span class="p">;;</span>
+                *<span class="o">)</span>
+                        <span class="nb">echo</span> <span class="s2">&quot;other&quot;</span><span class="p">;;</span>
+        <span class="k">esac</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="python">
+<h2>9.2. python代码样例<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/file&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/file&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/Users/michael/gbk.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;gbk&#39;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="json">
+<h2>9.3. json对象样例展示<a class="headerlink" href="#json" title="永久链接至标题">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;BeJson&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.bejson.com&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;page&quot;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span>
+    <span class="nt">&quot;isNonProfit&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="s2">&quot;科技园路.&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;江苏苏州&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;中国&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Google&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.google.com&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Baidu&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.baidu.com&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SoSo&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.SoSo.com&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">reStructuredText教程</a></h1>
+
+
+
+
+
+
+
+
+<h3>导航</h3>
+<p class="caption"><span class="caption-text">基础语法</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../基础语法/标题.html">1. 标题学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../基础语法/段落.html">2. 段落学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../基础语法/列表.html">3. 列表学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../基础语法/块.html">4. 块学习</a></li>
+</ul>
+<p class="caption"><span class="caption-text">中级语法</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="引用.html">1. 引用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="显示标记.html">2. 显式标记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="水平线.html">3. 水平线学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="表格学习.html">4. 表格学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="超链接.html">5. 超链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="图片.html">6. 图片</a></li>
+<li class="toctree-l1"><a class="reference internal" href="替换引用和定义.html">7. 替换引用和定义</a></li>
+<li class="toctree-l1"><a class="reference internal" href="注释.html">8. 注释</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. 代码块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bash">9.1. bash代码样例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python">9.2. python代码样例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#json">9.3. json对象样例展示</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Sphinx标记结构</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Sphinx标记结构/toctree.html">1. toctree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sphinx标记结构/内联标记.html">2. 内联标记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sphinx标记结构/段落级别标记.html">3. 段落级别标记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sphinx标记结构/表内容标记.html">4. 表内容标记</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sphinx标记结构/显示代码.html">5. 显示代码</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Sphinx标记结构/其他标记.html">6. 其他标记</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="注释.html" title="上一章">8. 注释</a></li>
+      <li>Next: <a href="../Sphinx标记结构/toctree.html" title="下一章">1. toctree</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, 黄壮壮.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/中级语法/代码块.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
